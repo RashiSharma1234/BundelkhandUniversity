@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Entry System - BIET College</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="manual-entry.html" class="active">Manual Entry</a></li>
+            <li><a href="thumb-verification.html">Thumb Verification</a></li>
+            <li><a href="facerecognition.html">Face Recognition</a></li>
+            <li><a href="reports.html">Reports</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h2>Manual Entry/Exit System</h2>
+        
+        <div class="entry-forms">
+            <!-- Entry Form -->
+            <div class="form-card">
+                <h3><i class="fas fa-sign-in-alt"></i> Record Entry</h3>
+                <form id="entryForm">
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="rollNumber">ID Number:</label>
+                        <input type="text" id="rollNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="purpose">Purpose:</label>
+                        <select id="purpose" required>
+                            <option value="">Select Purpose</option>
+                            <option value="Class">Class</option>
+                            <option value="Library">Library</option>
+                            <option value="Sports">Sports</option>
+                            <option value="Meeting">Meeting</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn">
+                        <i class="fas fa-check"></i> Record Entry
+                    </button>
+                </form>
+            </div>
+
+            <!-- Exit Form -->
+            <div class="form-card">
+                <h3><i class="fas fa-sign-out-alt"></i> Record Exit</h3>
+                <form id="exitForm">
+                    <div class="form-group">
+                        <label for="exitRollNumber">ID Number:</label>
+                        <input type="text" id="exitRollNumber" required>
+                    </div>
+                    <button type="submit" class="btn">
+                        <i class="fas fa-check"></i> Record Exit
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Entry/Exit Logs -->
+        <div class="logs-section">
+            <h3>Recent Entries/Exits</h3>
+            <div class="table-controls">
+                <button id="exportTodayBtn" class="btn secondary">
+                    <i class="fas fa-download"></i> Export Today's Logs
+                </button>
+                <button id="sendNowBtn" class="btn secondary">
+                    <i class="fas fa-paper-plane"></i> Send Report Now
+                </button>
+            </div>
+            
+            <table id="logsTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>ID Number</th>
+                        <th>Entry Time</th>
+                        <th>Exit Time</th>
+                        <th>Purpose</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Logs will be populated here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 BIET Jhansi. All rights reserved.</p>
+    </footer>
+
+    <script src="manual-entry.js"></script>
+</body>
+</html>
